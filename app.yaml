@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stylingapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: stylingapp
+  template:
+    metadata:
+      labels:
+        app: stylingapp
+    spec:
+      containers:
+        - name: stylingapp-container
+          image: dos-gen-ai/style:3-demo
+          ports:
+            - containerPort: 80
