@@ -1,0 +1,8 @@
+streamlit
+python-dotenv 
+PyPDF2
+htmlTemplate
+chromadb==0.3.26
+pydantic==1.10.8
+langchain
+docx
