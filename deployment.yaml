@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stylingapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stylingapp
+  template:
+    metadata:
+      labels:
+        app: stylingapp
+    spec:
+      containers:
+        - name: stylingapp-container
+          image: reg.dcaic.deloitte.com/dos-gen-ai/style:27-demo
+          ports:
+            - containerPort: 8501
+          resources:
+            requests:
+              memory: "100Gi"  
+              cpu: "2"       
+              nvidia.com/gpu: "2"  
+            limits:
+              memory: "60Gi"  
+              cpu: "2"        
+              nvidia.com/gpu: "2" 

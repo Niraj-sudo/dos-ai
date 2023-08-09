@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: stylingapp-service
+spec:
+  selector:
+    app: stylingapp
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80  # The port you want to use to access the service externally
+      targetPort: 8501  # The port your Streamlit app is listening on inside the container
